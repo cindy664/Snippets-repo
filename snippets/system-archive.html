@@ -1,0 +1,10 @@
+//added to "skip-deadlineProgramRegistrationClose" snippet. Removed because it was causing emails to skip at Ras
+{{#ifMatchesRegexStr v_registrationMethod "Student Self Registers"}}
+    {{else}}
+        {{#ifMatchesRegexStr v_registrationMethod "Student Self Registers - School Directed"}}
+            {{#ifMatchesRegexStr v_schoolPermissionStatus ".*(School Granted Permission|Provisioned by Podium|Code Provisioned by School).*"}}
+            {{else}}{{sendSkip cause="not applicable school 1"}}
+            {{/ifMatchesRegexStr}}
+        {{else}}{{sendSkip cause="not applicable school 2"}}
+        {{/ifMatchesRegexStr}}
+    {{/ifMatchesRegexStr}}
