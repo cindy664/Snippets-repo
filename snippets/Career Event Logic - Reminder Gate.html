@@ -1,0 +1,24 @@
+{{~#assign "e_isTestEmail"}}false{{/assign~}}
+{{~#ifMatchesRegexStr email "(dama|cindy|peter|nicole|bri)\+.*@(podiumeducation|untapped)\.com"~}}
+	{{~#assign "e_isTestEmail"}}true{{/assign~}}
+{{~/ifMatchesRegexStr~}}
+{{~#ifMatchesRegexStr email ".*@totemcr\.com"~}}
+	{{~#assign "e_isTestEmail"}}true{{/assign~}}
+{{~/ifMatchesRegexStr~}}
+{{~#ifMatchesRegexStr email ".*notest.*"~}}
+	{{~#assign "e_isTestEmail"}}false{{/assign~}}
+{{~/ifMatchesRegexStr~}}
+{{~#ifEq e_isTestEmail "false"~}}
+	{{~#ifEq v_eventStatus "ACTIVE"~}}
+	{{~else~}}
+		{{~sendSkip cause="Event not active" eventStatus=v_eventStatus~}}
+	{{~/ifEq~}}
+	{{~#if eventStartDateTime~}}
+		{{~#if v_eventStartDateTime~}}
+			{{~#ifEq (dateFormat eventStartDateTime format="yyyyMMddHHmm" tz="UTC") (dateFormat v_eventStartDateTime format="yyyyMMddHHmm" tz="UTC")~}}
+			{{~else~}}
+				{{~sendSkip cause="Event rescheduled - stale journey run" payloadStartDateTime=eventStartDateTime catalogStartDateTime=v_eventStartDateTime~}}
+			{{~/ifEq~}}
+		{{~/if~}}
+	{{~/if~}}
+{{~/ifEq~}}
