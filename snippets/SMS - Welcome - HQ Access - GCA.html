@@ -1,0 +1,5 @@
+Hi {{nameFirst}}! You just received access to your program platform, {{{ snippet "Product - GCA - LMS Name" }}}. Check for an email from your LiveLab instructor to get started!{{#if v_firstLiveLabDateTime}} 
+
+Your first LiveLab is {{dateFormat v_firstLiveLabDateTime format="EEEE, MMMM d, yyyy" tz=timeZone}} at {{dateFormat v_firstLiveLabDateTime format="h:mm" tz=timeZone}} {{dateFormat v_firstLiveLabDateTime format="a (z)" tz=timeZone}}{{else}}{{/if}}
+
+– {{{v_coachNameFirst}}}, {{{ snippet "Product - GCA - Success Advisor" }}}
