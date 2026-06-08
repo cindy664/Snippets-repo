@@ -1,0 +1,6 @@
+ {{{ snippet "universal-variables" }}}{{{ snippet "credit overload warning" }}}{{#ifMatchesRegexStr university ".*(Denison).*"}}{{#assign "e_notGuaranteed"}}true{{/assign}}{{/ifMatchesRegexStr}}{{{ snippet "SMS - GTX Prepend" }}}
+{{#if e_notGuaranteed}}You have submitted your application for the Denison Global Career Accelerator. Your application will be reviewed. We will send you a follow up email with next steps if you have been accepted.{{else}}{{#ifMatchesRegexStr v_appProcessCommit "Manual"}}You have successfully committed to{{else}}You have been approved for{{/ifMatchesRegexStr}} the {{{v_programName}}}!{{#and (eq university "Arizona State University") e_podiTest}} Your registration will be processed soon! In the meantime, make sure {{#if e_summerCreditWarn}}you’re only registered in 8 credits, or get a credit overload approved, {{else}}you’re only registered in 6 credits in session A and 6 in session B, or 12 in session C {{/if}}so you have room for {{v_genericProgramName}} courses to be added.{{/and}}
+
+Select your program details now.
+
+{{{v_llForm}}}{{/if}}
