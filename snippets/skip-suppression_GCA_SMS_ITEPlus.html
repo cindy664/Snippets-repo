@@ -1,0 +1,5 @@
+{{~#ifMatchesRegexStr v_channel "sms"~}}
+	{{~#ifEq v_suppressSMS_GCA_ITEPlus "true"~}}
+		{{~sendSkip cause="Partner On GCA Suppression List (SMS) - ITE+" suppressSMS_GCA_ITEPlus=v_suppressSMS_GCA_ITEPlus~}}
+	{{~/ifEq~}}
+{{~/ifMatchesRegexStr~}}
