@@ -1,0 +1,10 @@
+{{defaultIfEmpty nameFirst "Hello"}} - Friendly reminder to complete your enrollment for the {{ defaultIfEmpty v_programName "Global Career Accelerator" }} as soon as possible. The link is below and also in your inbox.
+
+The deadline to complete enrollment is Monday, January 6, but our program advisors are available today to answer any questions you have. 
+
+We look forward to you joining us — I’m confident you’ll find this to be a career transforming experience.
+
+- {{ defaultIfEmpty ownerNameFirst "Nate"}}
+
+{{#ifMatchesRegexStr v_applicationType "Podi App"}}{{{v_continueApplicationLinkSMS}}}{{else}}{{{v_continueApplicationLink}}}{{/ifMatchesRegexStr}}
+{{{ snippet "system - sms opt out logic" }}}
