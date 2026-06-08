@@ -1,0 +1,10 @@
+{{~#assign "v_applicationConfirmationFile"~}}
+	{{~#if applicationConfirmationFile~}}{{{applicationConfirmationFile}}}{{~else~}}{{~#if Opportunityid~}}{{~#each allOpportunities~}}{{~#ifEq id Opportunityid~}}{{~#if applicationConfirmationFile~}}{{{applicationConfirmationFile}}}{{~/if~}}{{~/ifEq~}}{{~/each~}}{{~/if~}}{{~/if~}}
+{{~/assign~}}
+
+{{#catalog "Enrollment" lookup_enrollmentProcess as |enrollment|}}
+    {{#if stage}}{{#ifContains withdrawSteps_StandardCustomStages stage}}{{#assign "e_wdCustomStagesMatch"}}true{{/assign}}{{/ifContains}}{{/if}}
+    {{#if withdrawSteps_Setup}}{{#assign "v_withdrawSteps_Setup"}}{{withdrawSteps_Setup}}{{/assign}}{{/if}}
+    {{#if withdrawSteps_ContactEmail}}{{#assign "v_withdrawSteps_ContactEmail"}}{{#ifContainsStr withdrawSteps_Setup "Contact"}}{{#if withdrawSteps_ContactEmail}}{{withdrawSteps_ContactEmail}}{{/if}}{{/ifContainsStr}}{{/assign}}{{/if}}
+    {{#if withdrawSteps_Contact}}{{#assign "v_withdrawSteps_Contact"}}{{#ifContainsStr withdrawSteps_Setup "Contact"}}{{#if withdrawSteps_ContactEmail}}{{withdrawSteps_Contact}}{{/if}}{{/ifContainsStr}}{{/assign}}{{/if}}
+{{/catalog}}
