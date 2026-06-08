@@ -1,0 +1,12 @@
+{{defaultIfEmpty nameFirst "Hello"}}, I hope you had a great spring break! Last week we sent you an email,and wanted to remind you to finish your enrollment in the {{defaultIfEmpty v_programName "Global Career Accelerator"}}!
+
+There's no additional cost to participate this {{lower (defaultIfEmpty v_activeSeason "summer")}}, when you enroll in the {{defaultIfEmpty v_programName "Global Career Accelerator"}}! It is all included as part of your normal tuition and fees.
+
+Now is the perfect time to take the next step toward your future. It only takes a moment to complete your enrollment.
+
+Let me know if you have any questions!
+
+- {{ defaultIfEmpty ownerNameFirst "Nate"}}
+
+{{#ifMatchesRegexStr v_applicationType "Podi App"}}{{{v_continueApplicationLinkSMS}}}{{else}}{{{v_continueApplicationLink}}}{{/ifMatchesRegexStr}}
+{{{ snippet "system - sms opt out logic" }}}
