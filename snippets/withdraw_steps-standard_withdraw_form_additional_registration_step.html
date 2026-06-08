@@ -1,0 +1,8 @@
+{{#assign "skipRegistrationDropStep"}}{{#ifMatchesRegexStr v_university "University of Arizona"}}true{{/ifMatchesRegexStr}}{{/assign}}
+<ol>
+	<li>Please submit this <a href="{{withdrawSteps_Form}}">form</a>
+	</li>
+	{{#if withdrawSteps_Contact}}<li>Email the <a href="mailto:{{withdrawSteps_ContactEmail}}?subject=Withdrawing%20my%20application">{{{withdrawSteps_Contact}}}</a> to notify them of your withdrawal:<br/></li>{{/if}}
+	{{#ifEq skipRegistrationDropStep "true"}}{{else}}<li>Drop the course codes in <a href="{{{v_registrationLink}}}">{{ v_schoolSystemNameRegistration }}</a>
+	</li>{{/ifEq}}
+</ol>
