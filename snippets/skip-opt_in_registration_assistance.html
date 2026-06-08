@@ -1,0 +1,13 @@
+{{~#catalog "Term" lookup_termCatalog as |term|~}}
+    {{~#ifMatchesRegexStr term.testingExperiments "Opt In Assisted Registration"~}}
+        {{~#assign "e_testing"~}}true{{~/assign~}}
+    {{~/ifMatchesRegexStr~}}
+{{~/catalog~}}
+
+{{~#ifEq profile.optInAssistedReg Opportunityid~}}
+    {{~#assign "e_optIn"~}}true{{~/assign~}}
+{{~/ifEq~}}
+
+{{~#and e_testing e_optIn~}}
+	{{~sendSkip cause="Student opted in to reg assist and experiment is live" opportunityId=Opportunityid~}}
+{{~/and~}}
