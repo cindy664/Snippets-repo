@@ -1,0 +1,7 @@
+{{#assign "weekNumber"}}{{now format="w"}}{{/assign}}
+
+{{#catalog "PersonalizedMessageStarters" weekNumber as |msg|}}
+    {{{msg.text}}}
+{{else}}
+    Hope you're doing well!
+{{/catalog}}
