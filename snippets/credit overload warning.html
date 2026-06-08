@@ -1,0 +1,10 @@
+{{~#ifMatchesRegexStr university "(Arizona State University)"~}}
+	{{~#ifMatchesRegexStr v_prospectiveTerm "[sS]ummer.*"~}}
+		{{~#assign "e_summerCreditWarn"~}}true{{~/assign~}}
+	{{~else~}}
+		{{~#assign "e_fallspringCreditWarn"~}}true{{~/assign~}}
+	{{~/ifMatchesRegexStr}}
+{{~/ifMatchesRegexStr}}
+{{~#ifMatchesRegexStr email ".*[+].*@podiumeducation\.com"~}}
+	{{~#assign "e_podiTest"~}}true{{~/assign~}}
+{{~/ifMatchesRegexStr~}}
