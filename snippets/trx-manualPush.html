@@ -1,0 +1,4 @@
+{{#assign "e_courseCodeClean"}}{{{replace (snippet "logic-course_code") "<br>" " or "}}}{{/assign}}{{defaultIfEmpty nameFirst "Hi there"}}, seats are quickly filling for the summer {{v_schoolAbbreviationExternal}} Global Career Accelerator! {{#ifMatchesRegexStr v_stage "(Application Completed|Reg Permission Granted)"}}{{#if (snippet "logic-course_code")}}If you still plan on registering you can add {{replace e_courseCodeClean "• " ""}} to your schedule using this link:
+{{else}}Finish saving your spot here:{{/if~}}{{else}}Finish saving your spot here:{{/ifMatchesRegexStr}}
+
+{{{v_nextStepUrl}}}
