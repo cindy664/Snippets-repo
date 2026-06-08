@@ -1,0 +1,58 @@
+{{~#if v_instructorNameFirst~}}
+{{~else~}}
+  {{~#assign "v_instructorNameFirst"~}}
+    {{~#if liveLabId~}}
+
+      {{~#catalog "LiveLab" liveLabId as |livelab|~}}
+        {{~#assign "v_instructorNameFirst"~}}{{livelab.livelabInstructorNameFirst}}{{~/assign~}}
+      {{~/catalog~}}
+
+    {{~else~}}
+
+      {{~#each allCourseConnections as |cc|~}}
+        {{~#if stop_instructorNameFirstLoop~}}
+        {{~else~}}
+
+          {{~#catalog "LiveLab" cc.lookup_livelabCatalog as |livelab|~}}
+
+            {{~#ifEq livelab.term e_term~}}
+              {{livelab.livelabInstructorNameFirst}}
+              {{~#assign "stop_instructorNameFirstLoop"~}}true{{~/assign~}}
+            {{~/ifEq~}}
+
+          {{~/catalog~}}
+
+        {{~/if~}}
+      {{~/each~}}
+
+    {{~/if~}}
+  {{~/assign~}}
+{{~/if~}}
+
+{{~#if v_instructorNameLast~}}
+{{~else~}}
+  {{~#assign "v_instructorNameLast"~}}
+    {{~#if liveLabId~}}
+
+      {{~#catalog "LiveLab" liveLabId as |livelab|~}}
+        {{~#assign "v_instructorNameLast"~}}{{livelab.livelabInstructorNameLast}}{{~/assign~}}
+      {{~/catalog~}}
+
+    {{~else~}}
+
+      {{~#each allCourseConnections as |cc|~}}
+        {{~#if stop_instructorNameLastLoop~}}
+        {{~else~}}
+
+          {{~#catalog "LiveLab" cc.lookup_livelabCatalog as |livelab|~}}
+
+            {{~#ifEq livelab.term e_term~}}
+              {{livelab.livelabInstructorNameLast}}
+              {{~#assign "stop_instructorNameLastLoop"~}}true{{~/assign~}}
+            {{~/ifEq~}}
+          {{~/catalog~}}
+        {{~/if~}}
+      {{~/each~}}
+    {{~/if~}}
+  {{~/assign~}}
+{{~/if~}}
