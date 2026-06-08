@@ -1,0 +1,13 @@
+{{#ifMatchesRegexStr ownerNameFirst ".*[Nn]ic.*"}}
+    nick@podiumeducation.com
+    {{else}}
+    {{#ifMatchesRegexStr ownerNameFirst ".*[Mm]att.*"}}
+        matthew.lai@podiumeducation.com
+        {{else}}
+        {{#ifMatchesRegexStr ownerNameFirst ".*[Mm]ad.*"}}
+            maddie@podiumeducation.com
+        {{else}}
+                student-data@podiumeducation.com
+        {{/ifMatchesRegexStr}}
+    {{/ifMatchesRegexStr}}
+{{/ifMatchesRegexStr}}
