@@ -1,0 +1,40 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+<p style="line-height:20px">--
+<table>
+    <tr>
+        <td style="border-right: 2px solid #121022;padding-right:10px;">
+            <table>
+                <tr>
+                    <td style="padding-right:15px; font-family: 'Figtree', sans-serif;">
+                        <b><span style="font-family: 'Figtree', sans-serif; font-size: 18px; color:#121022;">{{defaultIfEmpty ownerPartnerSuccessNameFirst "Becky"}} {{defaultIfEmpty ownerPartnerSuccessNameLast "Richey"}}</span></b><br/>{{#ifContainsStr ownerPartnerSuccessNameFirst "Marshall" }}
+                            <span style="font-size:15px;">Director of Partner Success</span>{{else}}<span style="font-family: 'Figtree', sans-serif; font-size: 15px; color:#121022;">
+                                
+                                {{#if ownerPartnerSuccessNameFirst}}{{#ifContainsStr ownerPartnerSuccessNameFirst "Becky"}}Senior {{/ifContainsStr}}{{else}}Senior {{/if}}
+                                Partner Success Manager</span>{{/ifContainsStr}}<br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:0px; font-family: 'Figtree', sans-serif; font-size:14px;">{{#ifContainsStr ownerPartnerSuccessNameFirst "Marshall" }}
+                        <span style="font-family: 'Figtree', sans-serif; color:#121022; font-weight:bold;">call: </span>
+                        <a href="tel:+917-549-9003" style="color:#121022;">(917) 549-9003</a><br>{{/ifContainsStr}}
+                        <span style="font-family: 'Figtree', sans-serif; color:#121022; font-weight:bold;">w:</span>
+                        <a href="https://www.podiumeducation.com/"style="font-family: 'Figtree', sans-serif; color:#121022;">podiumeducation.com</a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td colspan="2" align="left" style="padding: 15px 15px;">
+            <table>
+                <tr>
+                    <td>
+                        <img src="https://library.iterable.com/3196/20921/ed1e2cd5f70b4df8bf5d4dc26f6e7d5c-GCA-full-wide-logo_dark.png" width="200" height=""  /><br/>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</p>
