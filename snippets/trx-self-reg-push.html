@@ -1,0 +1,17 @@
+{{#ifContainsStr (snippet "logic-course_code") "•"}}
+Hi {{nameFirst}}!
+
+There’s just one more step to register for the {{ defaultIfEmpty v_programName "Global Career Accelerator" }}. You’re already accepted, you just need to complete your registration below.
+
+Register here: {{{v_registrationLink}}}
+
+{{else}}
+Hi {{nameFirst}}!
+
+There’s just one more step to register for the {{ defaultIfEmpty v_programName "Global Career Accelerator" }}. You’re already accepted, you just need to complete your registration below:
+
+Register here: {{{v_registrationLink}}} using course code: {{{ snippet "logic-course_code" }}}
+
+{{/ifContainsStr}}
+
+Call or text me if you have any questions.
